@@ -16,3 +16,6 @@ import { StoreModule } from './store/store.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// Step 2
+
