@@ -7,10 +7,11 @@ import { CounterDirective } from './counter.directive';
 import { CartSummaryComponent } from './cartSummary/cartSummary.component';
 import { CartDetailComponent } from './cartDetail/cartDetail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-    imports: [ModelModule, BrowserModule, FormsModule],
+    imports: [ModelModule, BrowserModule, FormsModule, RouterModule],
     declarations: [
         StoreComponent, 
         CounterDirective, 
