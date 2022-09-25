@@ -12,8 +12,6 @@ import { AuthService } from './auth.service';
     imports: [HttpClientModule],
     providers: [ProductRepository, StaticDataSource, Cart, Order, OrderRepository,
         { provide: StaticDataSource, useClass: RestDataSource },
-        RestDataSource, AuthService
-    ]
+        RestDataSource, AuthService]
 })
-
 export class ModelModule { }

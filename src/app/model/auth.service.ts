@@ -3,19 +3,19 @@ import { Observable } from "rxjs";
 import { RestDataSource } from "./rest.datasource";
 
 @Injectable()
-
 export class AuthService {
-    constructor(private dataSoure: RestDataSource) { }
+
+    constructor(private datasource: RestDataSource) { }
 
     authenticate(username: string, password: string): Observable<boolean> {
-        return this.dataSoure.authenticate(username, password);
+        return this.datasource.authenticate(username, password);
     }
 
     get authenticated(): boolean {
-        return this.dataSoure.auth_token != null;
+        return this.datasource.auth_token != null;
     }
 
     clear() {
-        this.dataSoure.auth_token = undefined;
+        this.datasource.auth_token = undefined;
     }
 }

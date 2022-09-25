@@ -5,7 +5,6 @@ import { Order } from "./order.model";
 import { RestDataSource } from "./rest.datasource";
 
 @Injectable()
-
 export class OrderRepository {
     private orders: Order[] = [];
     private loaded: boolean = false;
@@ -14,7 +13,8 @@ export class OrderRepository {
 
     loadOrders() {
         this.loaded = true;
-        this.dataSource.getOrders().subscribe(orders => this.orders = orders);
+        this.dataSource.getOrders()
+            .subscribe(orders => this.orders = orders);
     }
 
     getOrders(): Order[] {
@@ -31,7 +31,8 @@ export class OrderRepository {
 
     updateOrder(order: Order) {
         this.dataSource.updateOrder(order).subscribe(order => {
-            this.orders.splice(this.orders.findIndex(o => o.id == order.id), 1, order);
+            this.orders.splice(this.orders.
+                findIndex(o => o.id == order.id), 1, order);
         });
     }
 
